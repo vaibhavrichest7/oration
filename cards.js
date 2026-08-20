@@ -1,0 +1,156 @@
+// MANCH session card data.
+// This file is intentionally shaped to mirror a future Supabase table:
+// each object below = one row. When Soham's tables are ready, this array
+// can be replaced by a fetch() call returning the same shape.
+
+export const SECTIONS = [
+  { id: "general", label: "General Rotation", note: "The core 10-card set. Any pod, any week." },
+  { id: "weak-english", label: "Weak-English Block", note: "Recurring block for homogeneously-grouped pods. Separate cadence from the general rotation." },
+  { id: "mixed-ability", label: "Mixed-Ability Confidence", note: "For pods with a visible skill gap by design. Equal turns, co-construction, no helper/learner framing." },
+];
+
+export const CARDS = [
+  // ---------- TASK 1: GENERAL ROTATION (10 cards) ----------
+  {
+    id: "round-robin",
+    section: "general",
+    title: "Round Robin (3/3/3)",
+    podSize: "4",
+    description: "Same rehearsed speech, three rounds, three different listeners, 3 min each.",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: null,
+  },
+  {
+    id: "chain-story",
+    section: "general",
+    title: "Chain Story",
+    podSize: "4",
+    description: "One continuous story, 30 sec each, no evaluation at any point — lowest-threat card in the set.",
+    roles: ["Speaker", "Thread-holder (restates the last line if someone loses it)", "Timekeeper"],
+    facilitatorNote: null,
+  },
+  {
+    id: "mother-tongue-bridge",
+    section: "general",
+    title: "Mother Tongue Bridge",
+    podSize: "4",
+    description: "Speaker does 30 sec in their most comfortable language, then the same content in English. Everyone does both halves, including confident students.",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: null,
+  },
+  {
+    id: "interview-gauntlet",
+    section: "general",
+    title: "Interview Gauntlet",
+    podSize: "4",
+    description: "Hard 30-second-cut mock interview questions, three per candidate, back to back, no feedback between.",
+    roles: ["Candidate", "Interviewer A", "Interviewer B"],
+    facilitatorNote: null,
+  },
+  {
+    id: "gd-simulation",
+    section: "general",
+    title: "GD Simulation",
+    podSize: "8",
+    description: "Group discussion: 2 min silent planning, fixed-order 45-sec opening statements, 8 min open discussion, equal airtime by construction.",
+    roles: ["Discussant", "Timekeeper"],
+    facilitatorNote: null,
+  },
+  {
+    id: "curveball-clinic",
+    section: "general",
+    title: "Curveball Clinic",
+    podSize: "4",
+    description: "Speaker gives a 60-sec talk; at a moment of their choosing, another student says one unrelated word; speaker has 10 sec to work it in.",
+    roles: ["Speaker", "Curveball-thrower", "Timekeeper"],
+    facilitatorNote: "If anyone laughs at a bad recovery, address it immediately — one cruel laugh undoes multiple sessions of safety.",
+  },
+  {
+    id: "chunk-relay",
+    section: "general",
+    title: "Chunk Relay",
+    podSize: "4",
+    description: "Speaker tells a 60-sec story using at least 3 of 5 given phrase chunks.",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: null,
+  },
+  {
+    id: "explain-it-twice",
+    section: "general",
+    title: "Explain It Twice",
+    podSize: "4",
+    description: "Same content explained to someone in-discipline (90 sec), then to a novice (90 sec).",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: null,
+  },
+  {
+    id: "structure-sprint",
+    section: "general",
+    title: "Structure Sprint",
+    podSize: "4",
+    description: "45-sec argument using exactly three fixed joints: then / because / so.",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: null,
+  },
+  {
+    id: "question-volley",
+    section: "general",
+    title: "Question Volley",
+    podSize: "4",
+    description: "Rapid-fire pairs, 30-sec answers, equal turns for everyone by construction.",
+    roles: ["Asker", "Answerer", "Timekeeper"],
+    facilitatorNote: null,
+  },
+
+  // ---------- TASK 2A: WEAK-ENGLISH RECURRING BLOCK (3 exercises) ----------
+  {
+    id: "word-ladder-sentences",
+    section: "weak-english",
+    title: "Word Ladder Sentences",
+    podSize: "4",
+    description: "Each student gets one new word already sitting inside a fixed spoken sentence frame (e.g. \"Today I feel ___ because ___\"). They say it, then reuse the same word in one sentence of their own — 20 sec each.",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: "Rotate the word set every session — never route the same 'hard word' back to a student who struggled with it before.",
+    priority: "Vocabulary-in-context",
+  },
+  {
+    id: "frame-fill",
+    section: "weak-english",
+    title: "Frame Fill",
+    podSize: "4",
+    description: "A fixed sentence frame with blanks (\"I think ___ because ___, so ___.\") goes to everyone. Each student fills it and speaks it aloud, 30 sec, on a new topic each round.",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: "The frame is fixed on purpose — this is about getting the structure out fluently, not correcting grammar mid-round.",
+    priority: "Structured sentence scaffolding",
+  },
+  {
+    id: "just-finish-it",
+    section: "weak-english",
+    title: "Just Finish It",
+    podSize: "4",
+    description: "A 45-sec talk on an easy, low-stakes prompt (e.g. \"my favorite food\"). The only goal is speaking for the full 45 seconds without stopping.",
+    roles: ["Speaker", "Timekeeper"],
+    facilitatorNote: "No one comments on quality, ever, for this one. Completing the full 45 seconds is the entire win condition.",
+    priority: "Confidence / exposure-first",
+  },
+
+  // ---------- TASK 2B: MIXED-ABILITY CONFIDENCE SESSIONS (2 exercises) ----------
+  {
+    id: "shared-object-story",
+    section: "mixed-ability",
+    title: "Shared Object Story",
+    podSize: "Pair (2)",
+    description: "Both students look at one shared picture or object. Together they build one story about it aloud, alternating every 15 sec, each line building on the last.",
+    roles: ["Speaker A", "Speaker B"],
+    facilitatorNote: "Alternate who opens the story each round — never let the same person start every time. Introduce pairs by name only.",
+  },
+  {
+    id: "two-voices-one-answer",
+    section: "mixed-ability",
+    title: "Two Voices, One Answer",
+    podSize: "Pair (2)",
+    description: "Both students get the same simple question and both answer it, 20 sec each. Who answers first always alternates between rounds.",
+    roles: ["Speaker A", "Speaker B"],
+    facilitatorNote: "Equal time, always. Never introduce the pairing as 'stronger/weaker' or 'helper/learner' — in the app or out loud.",
+  },
+];
